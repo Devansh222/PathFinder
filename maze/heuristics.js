@@ -15,22 +15,19 @@ function ChebyshevHeu(dx, dy) {
     return (Math.max(dx, dy));
 }
 
-function MinkowskiHeu(dx, dy, p) {
-    // Minkowski distance generalizes the concept of Euclidean and Manhattan distances
-    return Math.pow(Math.pow(Math.abs(dx), p) + Math.pow(Math.abs(dy), p), 1/p);
-}
+// function MinkowskiHeu(dx, dy, p) {
+//     return Math.pow(Math.pow(Math.abs(dx), p) + Math.pow(Math.abs(dy), p), 1/p);
+// }
 
-function DiagonalHeu(dx, dy) {
-    // Diagonal distance is similar to Chebyshev but with a weighted diagonal movement
-    var D = 1;
-    var D2 = Math.SQRT2;
-    return D * (dx + dy) + (D2 - 2 * D) * Math.min(dx, dy);
-}
+// function DiagonalHeu(dx, dy) {
+//     var D = 1;
+//     var D2 = Math.SQRT2;
+//     return D * (dx + dy) + (D2 - 2 * D) * Math.min(dx, dy);
+// }
 
-function WeightedManhattanHeu(dx, dy, weight) {
-    // Weighted Manhattan distance applies a weight to the Manhattan distance
-    return weight * (dx + dy);
-}
+// function WeightedManhattanHeu(dx, dy, weight) {
+//     return weight * (dx + dy);
+// }
 
 function heuristic(curr, end, heu, p = 1, weight = 1) {
     var dx = Math.abs(curr.c - end.c);
@@ -46,12 +43,6 @@ function heuristic(curr, end, heu, p = 1, weight = 1) {
         val = OctileHeu(dx, dy);
     } else if (heu === 'chebyshev') {
         val = ChebyshevHeu(dx, dy);
-    } else if (heu === 'minkowski') {
-        val = MinkowskiHeu(dx, dy, p);  // `p` is the order of the Minkowski distance
-    } else if (heu === 'diagonal') {
-        val = DiagonalHeu(dx, dy);
-    } else if (heu === 'weightedManhattan') {
-        val = WeightedManhattanHeu(dx, dy, weight);  // `weight` is a multiplier for the Manhattan distance
     }
     return val;
 }
