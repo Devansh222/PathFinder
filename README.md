@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # Shortest Pathfinder
 This project finds the shortest path between two points in 2D context. The algorithms which are being implemented in this project are the following:
@@ -35,3 +36,6 @@ The project works on all the browsers (Chrome, Microsoft edge, Mozilla Firefox(v
 - If page doesn't load properly refresh it.  
 - The project is working on 64.0 64bit version of Firefox. On other versions UI will be displayed well . Moreover , the algos will work well but problem can be faced in drawing obstacles(smoothness in drawing). 
 
+=======
+
+>>>>>>> f30d0d20fcd04134621505f5d043569f87abc518
