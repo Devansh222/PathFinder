@@ -1,4 +1,4 @@
-@-ms-viewport{
+@viewport{
   width: device-width;
 }
 
@@ -8,17 +8,18 @@
 }
 
 .title{
-    color: rgb(15, 37, 37);
+    color: rgb(255, 255, 255);
     font-size: 40px;
     font-weight: 700; 
     text-align: center;
-    padding: 3px 5px;
+    padding: 3px 15px;
     font-family: "Lato", Helvetica, Arial, sans-serif;
     width: 20%;
+    font-weight: 150;
 }
 
 .title-container{
-    background-color: #369682;
+    background-color: #666666;
     display: flex;
     align-content: center;
     justify-content: space-between;
@@ -54,7 +55,7 @@
     background: white;
     width: 25px;
     height: 25px;
-    background-image: url("./images/mars_rover3.png");
+    background-image: url("./images/start.png");
     background-color: green;
     border: 1px solid white;
 }
@@ -88,11 +89,11 @@
     position: absolute;
     left: 10%;
     top: 2%;
-    color:black;
+    color:rgb(255, 250, 250);
     /* background-color: rgba(37, 67, 68, 0.8); */
     font-family: "Times New Roman", Times, serif;
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: 100;
     font-display: center;     
     padding: 0;
     margin: 0;
@@ -119,17 +120,17 @@
 }
 
 .start-btn:hover ,.reset-btn:hover{
-    background-color: #369682;
+    background-color: #A9A9A9;
     cursor: pointer;
 }
 
 .start-btn,.reset-btn{
-    color: rgb(15, 37, 37);
-    background-color: #1abc9c;
+    color: rgb(255, 255, 255);
+    background-color: #858585;
     border: none;
     border-radius: 5%;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 100;
     border-radius: 4px;
     padding: 10px 20px;
     width: 10%;
@@ -139,7 +140,7 @@
 
 
 .buttons{
-    background-color: #369682;
+    background-color: #858585;
     cursor: pointer;
     align-content: center;
     width: 100%;
@@ -153,10 +154,11 @@
 
 .check{
     position: relative;
-    color: rgb(15, 37, 37);
+    color: rgb(255, 255, 255);
     font-size: 20px;
+    font-weight: 100;
     font-family: Arial, Helvetica, sans-serif;
-    padding-left: 5px;
+    padding-left: 15px;
     width: 15%;
     top: 10px;
     left: 20px;
@@ -164,21 +166,22 @@
 
 .option{
 font-size: 16px;
-color: white;
+color: rgb(254, 251, 251);
 }
 
 .sel{
     font-size: 20px;
+    font-weight: 100;
     border: none;
     border-radius: 5%;
-    background-color: #1abc9c;
+    background-color: #858585;
     width: 10%;
-    color: rgb(15, 37, 37);
-    font-weight: bold;
+    color: rgb(255, 255, 255);
+    /* font-weight: bold; */
 }
 
 .sel:hover{
-    background-color: #369682;
+    background-color: #a9a7a7;
 }
 
 .weight{
@@ -211,3 +214,127 @@ body{
     background-color: rgba(0, 0, 0, 0.8);
     top: 87%;
 }
+
+
+/* Mobile devices */
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 1.5rem; /* Smaller font size for small screens */
+        width: 90%; /* Adjust width for smaller screens */
+    }
+
+    .title-container {
+        flex-direction: column; /* Stack elements vertically */
+        height: auto; /* Remove fixed height */
+        padding: 0.5em; /* Adjust padding */
+    }
+
+    .key {
+        width: 100%; /* Full width for smaller screens */
+        justify-content: center; /* Center contents */
+    }
+
+    .key p {
+        margin: 1%; /* Reduce margin for small screens */
+    }
+    #myCanvas {
+        width: 100%; /* Full width on small screens */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 100%; /* Prevent overflow */
+        max-height: 300px; /* Limit height for smaller screens */
+    }
+
+    .start-btn, .reset-btn {
+        width: auto; /* Allow buttons to adapt to content */
+        font-size: 1rem; /* Smaller font size */
+        padding: 0.5em 1em; /* Adjust padding */
+    }
+
+    .buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        padding: 0.5em 0; /* Adjust padding */
+    }
+
+    .check {
+        width: auto; /* Allow width to adapt */
+        font-size: 1rem; /* Smaller font size */
+        margin-top: 0.5em; /* Adjust margin */
+        left: 0; /* Reset left position */
+    }
+
+    .option {
+        font-size: 14px; /* Smaller font size for small screens */
+    }
+
+    .sel {
+        font-size: 16px; /* Adjust font size for buttons on small screens */
+        width: 40%; /* Increase width for better usability on small screens */
+        padding: 8px; /* Add padding for better click area */
+    }
+
+    .option, .weight {
+        font-size: 1rem; /* Smaller font size */
+    }
+
+
+
+    
+}
+
+/* Tablets */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    .title {
+        font-size: 1.75rem; /* Adjust font size for tablets */
+        width: 80%; /* Adjust width */
+    }
+
+    .title-container {
+        flex-direction: row; /* Keep elements in row for tablets */
+        height: 4em; /* Keep original height */
+        padding: 1em; /* Adjust padding */
+    }
+
+    .key {
+        width: 100%; /* Full width for tablets */
+        justify-content: center; /* Center contents */
+    }
+
+    .start-btn, .reset-btn {
+        width: auto; /* Allow buttons to adapt to content */
+        font-size: 1.125rem; /* Adjust font size */
+        padding: 0.75em 1.5em; /* Adjust padding */
+    }
+
+    #myCanvas {
+        width: 90%; /* Adjust width for tablets */
+        height: auto; /* Maintain aspect ratio */
+        max-width: 90%; /* Prevent overflow */
+        max-height: 400px; /* Limit height for tablets */
+    }
+
+    .buttons {
+        flex-direction: row; /* Align buttons in a row */
+        padding: 1em 0; /* Adjust padding */
+    }
+
+    .check {
+        width: auto; /* Allow width to adapt */
+        font-size: 1.125rem; /* Adjust font size */
+        margin-top: 0.75em; /* Adjust margin */
+    }
+
+    .option {
+        font-size: 15px; /* Slightly smaller font size for tablets */
+    }
+
+    .sel {
+        font-size: 18px; /* Adjust font size for buttons on tablets */
+        width: 20%; /* Adjust width for tablets */
+        padding: 10px; /* Add padding for better usability */
+    }
+
+    .option, .weight {
+        font-size: 1.125rem; /* Adjust font size */
+    }
+}
+

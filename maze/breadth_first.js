@@ -7,27 +7,34 @@ function solve_using_bfs(){
    
     set.push(tiles[sc][sr])
     tiles[sc][sr].visited = true
-    var time_s = new Date().getTime();            //time starts
-    while(set.length>0){  
+    var time_s = new Date().getTime();           // record the start time of the algorithm
+
+    while(set.length>0)
+    {  
         var cur = set[0]
-        set.shift()
+        set.shift()                              //  remove the current node
         visited_elt.push(cur)
-        if(cur == tiles[ec][er]){
+        if(cur == tiles[ec][er])
+        {
             flag =1
             path =path_f(cur)                  //function present in path.js file
             break;  
         }
+
         var neighbors = addNeighbors(cur,cur.c,cur.r)         //function present in grid.js
-        for(var i=0;i<neighbors.length;i++){
+        for(var i=0;i<neighbors.length;i++)
+        {
             var neighbor = neighbors[i]
-            if(neighbor.visited === false && neighbor.state!== 'w'){
+            if(neighbor.visited === false && neighbor.state!== 'w')
+            {
                 set.push(neighbor)
-                neighbor.previous = cur
+                neighbor.previous = cur                       // setting current as the previous element
                 neighbor.visited= true
             }
         }
     }
-    var time_e = new Date().getTime();      // time ends
+
+    var time_e = new Date().getTime();      // record the end time of the algorithm
 
     if(flag ===1)
     { 
@@ -36,8 +43,11 @@ function solve_using_bfs(){
         pathvisual(path,time,visited_elt)              //function present in animation.js file
 
 
-    }else{
+    }
+    else
+    {
         console.log('Solution does not exist')
+        alert('Solution does not exist')
     }
 }
 
